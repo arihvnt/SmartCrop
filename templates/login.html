@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SmartCrop*</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar"> 
+      <div class="nav-left">SmartCrop*</div>
+      <ul class="nav-right">
+          <li><a href="{{ url_for('home') }}#home">Home</a></li>
+          <li><a href="{{ url_for('home') }}#tools">Tools</a></li>
+          <li><a href="{{ url_for('home') }}#about">About</a></li>
+          <li><a href="{{ url_for('home') }}#help">Help</a></li>
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+      </ul>
+  </nav>
+
+  <!-- LOGIN BOX -->
+  <div class="login-container">
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Login to continue using <b>SmartCrop*</b></p>
+    <form class="login-form" method="POST" action="#">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p class="register-link">Don’t have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+    </form>
+  </div>
+
+</body>
+</html>
+

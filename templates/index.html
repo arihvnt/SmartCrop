@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCrop*</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">SmartCrop*</div>
+    <ul class="nav-right">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#help">Help</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="{{ url_for('login') }}">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Grow Smarter with SmartCrop*</h1>
+      <p>Accurate, AI-powered crop recommendations for every farmer.</p>
+      <div class="hero-buttons">
+        <a href="#tools" class="hero-btn">Get Started</a>
+        <a href="#about" class="hero-btn secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS SECTION -->
+  <section id="tools" class="tools">
+    <h2>Our Tools</h2>
+    <p class="section-desc">SmartCrop* provides multiple tools to assist farmers in making better decisions.</p>
+    <div class="tool-cards">
+      <div class="tool-card">
+        <h3>🌱 Crop Recommender</h3>
+        <p>Enter soil and weather details to get instant crop suggestions.</p>
+        <a href="{{ url_for('crop') }}" class="card-btn">Try Now</a>
+      </div>
+      <div class="tool-card">
+        <h3>🌦 Weather Insights</h3>
+        <p>Stay updated on weather conditions that affect your crops.</p>
+        <a href="{{ url_for('weather.weather') }}" class="card-btn">Check Weather</a>
+      </div>
+      <div class="tool-card">
+        <h3>📊 Yield Estimator</h3>
+        <p>Estimate potential crop yield using soil, area, and rainfall data.</p>
+        <a href="{{ url_for('yield_estimator') }}" class="card-btn">Estimate</a>
+      </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <h2>About SmartCrop*</h2>
+    <div class="about-scroll auto-scroll">
+      <div class="about-card">
+        <h3>💡 Our Mission</h3>
+        <p>To empower farmers with technology that improves productivity and income.</p>
+      </div>
+      <div class="about-card">
+        <h3>⚙️ How We Work</h3>
+        <p>We use AI, weather data, and soil analysis to recommend the best crops.</p>
+      </div>
+      <div class="about-card">
+        <h3>🌍 Why It Matters</h3>
+        <p>Better crop choices lead to less waste, healthier soil, and sustainable farming.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HELP & SUPPORT SECTION -->
+  <section id="help" class="help">
+    <h2>Help & Support</h2>
+    <p class="section-desc">Frequently asked questions and guidance for using SmartCrop*.</p>
+    <div class="help-carousel auto-scroll">
+      <div class="help-card">
+        <h3>❓ How does it work?</h3>
+        <p>Enter your soil and weather details, and our system suggests suitable crops.</p>
+      </div>
+      <div class="help-card">
+        <h3>📊 Do I need technical skills?</h3>
+        <p>No! SmartCrop* is designed to be beginner-friendly and simple to use.</p>
+      </div>
+      <div class="help-card">
+        <h3>📱 Where can I use it?</h3>
+        <p>It works on any smartphone or desktop browser with internet access.</p>
+      </div>
+      <div class="help-card">
+        <h3>⚡ Is it free to use?</h3>
+        <p>Yes, SmartCrop* is a free-to-use student project available to everyone.</p>
+      </div>
+      <div class="help-card">
+        <h3>🌍 Can I use it offline?</h3>
+        <p>Currently no, but offline features may be added in the future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 SmartCrop* Project Team | Made with ❤️ by Group 8 </p>
+  </footer>
+
+  <!-- JS Auto-scroll -->
+  <script>
+    const autoScrollElements = document.querySelectorAll('.auto-scroll');
+    autoScrollElements.forEach(container => {
+      let scrollAmount = 0;
+      const scrollStep = 1;
+      const scrollDelay = 20;
+      function autoScroll() {
+        scrollAmount += scrollStep;
+        if(scrollAmount >= container.scrollWidth - container.clientWidth) scrollAmount = 0;
+        container.scrollLeft = scrollAmount;
+      }
+      setInterval(autoScroll, scrollDelay);
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+

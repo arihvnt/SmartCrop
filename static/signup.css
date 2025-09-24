@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #00BFA5, #00796B);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+    border-radius: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #00796B, #00BFA5);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-left {
+    font-size: 1.5rem;
+    color: #FFFAF0;
+    font-weight: 600;
+}
+
+.nav-right {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-right li a {
+    text-decoration: none;
+    color: #FFFAF0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-right li a:hover {
+    color: #004c43;
+}
+
+.nav-right li:last-child a {
+    background: #FFFAF0;
+    color: #004c43;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-right li:last-child a:hover {
+    background: #004c43;
+    color: #fffaf0;
+}
+
+/* SIGNUP BOX */
+.signup-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin: auto;   /* center vertically */
+}
+
+.signup-container h2 {
+  margin-bottom: 10px;
+  color: #00796B;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.signup-form button {
+  padding: 12px;
+  background: #00796B;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup-form button:hover {
+  background: #00695C;
+}
+
+.login-link {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: #00796B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

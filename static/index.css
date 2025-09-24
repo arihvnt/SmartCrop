@@ -1,0 +1,343 @@
+/* ========================= */
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFAF0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ========================= */
+/* NAVBAR */
+.navbar {
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #00796B, #00BFA5);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-left {
+    font-size: 1.5rem;
+    color: #FFFAF0;
+    font-weight: 600;
+}
+
+.nav-right {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-right li a {
+    text-decoration: none;
+    color: #FFFAF0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-right li a:hover {
+    color: #004c43; /* subtle hover color change */
+}
+
+/* LOGIN BUTTON (Last item in navbar) */
+.nav-right li:last-child a {
+    background: #FFFAF0;
+    color: #004c43;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-right li:last-child a:hover {
+    background: #004c43;
+    color: #fffaf0;
+}
+
+/* ========================= */
+/* HERO SECTION */
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(to right, #e0f2f1, #ffffff);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #00796B;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 12px 25px;
+    background: #00796B;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.hero-btn:hover {
+    background: #00695C;
+    transform: translateY(-2px);
+}
+
+.hero-btn.secondary {
+    background: #fff;
+    color: #00796B;
+    border: 2px solid #00796B;
+}
+
+.hero-btn.secondary:hover {
+    background: #00796B;
+    color: #fff;
+}
+
+/* ========================= */
+/* TOOLS SECTION */
+.tools {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: #F0FFF9;
+    text-align: center;
+}
+
+.tools h2 {
+    font-size: 2.5rem;
+    color: #00796B;
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.tool-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.tool-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    max-width: 280px;
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.tool-card h3 {
+    margin-bottom: 15px;
+    color: #00796B;
+}
+
+.tool-card p {
+    flex-grow: 1;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    padding: 10px 20px;
+    background: #00796B;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.card-btn:hover {
+    background: #00695C;
+    transform: translateY(-2px);
+}
+
+/* ========================= */
+/* ABOUT SECTION WITH SCROLLING */
+.about {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: #E0F2F1;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #00796B;
+    margin-bottom: 20px;
+}
+
+.about-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.about-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.about-card {
+    flex: 0 0 300px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ========================= */
+/* HELP & SUPPORT SECTION */
+.help {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.help h2 {
+    font-size: 2.5rem;
+    color: #00796B;
+    margin-bottom: 20px;
+}
+
+.help-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.help-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Auto-scroll animation for About & Help */
+@keyframes autoScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.about-scroll.auto-scroll,
+.help-carousel.auto-scroll {
+    animation: autoScroll 30s linear infinite;
+}
+
+.help-card {
+    flex: 0 0 300px;
+    background: #F0FFF9;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ========================= */
+/* FOOTER */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #00796B;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+@media screen and (max-width: 900px) {
+    .tool-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-scroll,
+    .help-carousel {
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .tool-card, .about-card, .help-card {
+        flex: 0 0 90%;
+    }
+}
+
+
+

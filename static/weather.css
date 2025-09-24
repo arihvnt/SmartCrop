@@ -1,0 +1,167 @@
+/* ========================= */
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to right, #e0f2f1, #ffffff);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* ========================= */
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #00796B, #00BFA5);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.nav-left {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFFAF0;
+}
+
+.nav-right {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-right li a {
+    text-decoration: none;
+    color: #FFFAF0;
+    font-weight: 500;
+}
+
+.nav-right li:last-child a {
+    background: #FFFAF0;
+    color: #004c43;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-right li:last-child a:hover {
+    background: #004c43;
+    color: #fffaf0;
+}
+
+/* ========================= */
+/* WEATHER SECTION */
+.weather-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: calc(100vh - 80px);
+}
+
+.weather-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.weather-card h2 {
+    color: #00796B;
+    margin-bottom: 25px;
+}
+
+.weather-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.weather-card input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.weather-card button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #00796B;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.weather-card button:hover {
+    background: #00695C;
+    transform: translateY(-2px);
+}
+
+/* ========================= */
+/* WEATHER RESULT CARD */
+.weather-result {
+    margin-top: 25px;
+    background: #e0f2f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.weather-result h3 {
+    color: #004c43;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.weather-details p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #00796B;
+    font-weight: 500;
+}
+
+/* ========================= */
+/* FOOTER */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #00796B;
+    color: white;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
+    .weather-card {
+        padding: 30px 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+

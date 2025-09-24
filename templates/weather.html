@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather | SmartCrop*</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='weather.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar"> 
+      <div class="nav-left">SmartCrop*</div>
+      <ul class="nav-right">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('crop') }}">Crop Recommender</a></li>
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+          <li><a href="{{ url_for('signup') }}">Signup</a></li>
+          <li><a href="{{ url_for('weather.weather') }}">Weather</a></li>
+      </ul>
+  </nav>
+
+  <!-- WEATHER SECTION -->
+  <section class="weather-section">
+    <div class="weather-card">
+      <h2>🌤 Check Weather</h2>
+      <form method="POST" action="{{ url_for('weather.weather') }}">
+        <input type="text" name="city" placeholder="Enter City Name" required>
+        <button type="submit">Get Weather</button>
+      </form>
+
+      {% if data %}
+      <div class="weather-result">
+        <h3>Weather in {{ data.city }}</h3>
+        <div class="weather-details">
+          <p><strong>Temperature:</strong> {{ data.temperature }}°C</p>
+          <p><strong>Humidity:</strong> {{ data.humidity }}%</p>
+          <p><strong>Condition:</strong> {{ data.condition | capitalize }}</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 SmartCrop* Project Team | Made with ❤️ by Group 8 </p>
+  </footer>
+
+</body>
+</html>

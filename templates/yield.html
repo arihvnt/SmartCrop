@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yield Estimator | SmartCrop*</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='yield.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar">
+  <div class="nav-left">SmartCrop*</div>
+  <ul class="nav-right">
+    <li><a href="{{ url_for('home') }}#home">Home</a></li>
+    <li><a href="{{ url_for('crop') }}">Crop Recommender</a></li>
+    <li><a href="{{ url_for('yield_estimator') }}">Yield Estimator</a></li>
+    <li><a href="{{ url_for('weather.weather') }}">Weather</a></li>
+  </ul>
+</nav>
+
+
+  <!-- YIELD ESTIMATOR SECTION -->
+  <section class="yield-section">
+    <div class="yield-card">
+      <h2>📊 Yield Estimator</h2>
+      <form method="POST" action="{{ url_for('estimate') }}">
+        <label for="crop">Crop Name:</label>
+        <input type="text" id="crop" name="crop" placeholder="e.g. Wheat" required>
+
+        <label for="area">Area (in acres):</label>
+        <input type="number" id="area" name="area" placeholder="e.g. 5" required>
+
+        <label for="soil_quality">Soil Quality (1-10):</label>
+        <input type="number" id="soil_quality" name="soil_quality" min="1" max="10" placeholder="e.g. 7" required>
+
+        <label for="rainfall">Average Rainfall (mm):</label>
+        <input type="number" id="rainfall" name="rainfall" placeholder="e.g. 200" required>
+
+        <button type="submit">Estimate Yield</button>
+      </form>
+
+      {% if estimated_yield %}
+      <h3 class="yield-result">✅ Estimated Yield: {{ estimated_yield }} quintals</h3>
+      {% endif %}
+    </div>
+  </section>
+
+</body>
+</html>
