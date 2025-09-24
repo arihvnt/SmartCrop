@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: SmartCrop
+    env: python
+    pythonVersion: "3.11"   # safe version for your requirements
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
